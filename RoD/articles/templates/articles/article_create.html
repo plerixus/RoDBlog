@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="create-article">
+  <h2>create an awesome new article</h2>
+  <form class="site-form"  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save">
+  </form>
+
+</div>
+{% if Article and Article.author.username == user.get_username %}
+<a href="{% url 'articles:delete' Article.id %}">Delete</a>
+{% endif %}
+{% endblock %}
+<!--action="{% url 'articles:create' %}"-->
