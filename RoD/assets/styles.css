@@ -1,5 +1,5 @@
 body{
-  background: url(LEFT-SIDE-SM.jpg) left center no-repeat, url(RIGHT-SIDE-SM.jpg) right center no-repeat;
+  background: url("LEFT-SIDE-SM.jpg") no-repeat left bottom fixed, url("RIGHT-SIDE-SM.jpg") no-repeat right bottom fixed;
   font-family: Ubuntu;
   background-color: #ffffff;
 

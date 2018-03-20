@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1-v_36u0*w+#%#1sg-yk!baiw&p+*6u-yihswy+0^$shkt3g*n'
+SECRET_KEY = 'tcu@)uq+polm+2eh&!nromir+e#r&8%eck#v772^u5gm$9y4w-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.requiemofdeaths.com']
 
 
 # Application definition
@@ -129,3 +129,5 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+STATIC_ROOT = os.path.join(BASE_DIR, "assets")

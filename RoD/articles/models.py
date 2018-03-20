@@ -7,7 +7,7 @@ class Article(models.Model):
     active = models.BooleanField(default=True)
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    thumb = models.ImageField(default='default.png',blank=True)
+    thumb = models.ImageField(default='HEADER.jpg',blank=True)
     author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=None)
 
     GOLD_MAKING ="Gold making"
