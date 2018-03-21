@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
@@ -26,6 +28,10 @@ urlpatterns = [
     path('about/', views.about ),
     path('', article_views.article_list, name = 'home'),
     path('articles/',include('articles.urls')),
+    url(r'^accounts/password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^accounts/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^accounts/reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
     path('accounts/',include('accounts.urls')),
 ]
 

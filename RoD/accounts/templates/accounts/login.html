@@ -9,5 +9,7 @@
     <input type="hidden" name="next" value="{{ request.GET.next }}">
   {% endif %}
   <input type="submit" value="Login">
+  <a href="{% url 'accounts:password_reset' %}">Forgot password</a>
 </form>
+
 {% endblock %}

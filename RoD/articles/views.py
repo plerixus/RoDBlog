@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Article
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
 from .import forms
 
 # Create your views here.
@@ -24,6 +26,12 @@ def article_create(request):
     if request.method == 'POST':
         form =forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid():
+            # from_email = settings.EMAIL_HOST_USER
+            # send_mail('test subject',
+            #         'text testas',
+            #          from_email,
+            #          ['elijaszaremba@gmail.com'],
+            #          fail_silently=True)
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
