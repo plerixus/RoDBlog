@@ -51,11 +51,14 @@ def article_list_private(request):
 def article_update(request, id): #make sure that person can only edit his own
     article = Article.objects.get(id=id)
     form = forms.CreateArticle(request.POST or None, instance=article)
-    if form.is_valid():
-        form.save()
+    if article.author == request.user:
+        if form.is_valid():
+            form.save()
+            return redirect('articles:list')
+    else:
         return redirect('articles:list')
 
-    return render(request,'articles/article_create.html',{'form':form,'Article':article})
+
 
 @login_required(login_url='/accounts/login/')
 def article_delete(request, id):#make sure that person can only edit his own

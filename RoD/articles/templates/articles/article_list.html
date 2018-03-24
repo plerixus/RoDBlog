@@ -7,7 +7,7 @@
       {% if article.active %}
       <div class="article">
         <h2><a href="{% url 'articles:detail' slug=article.id %}">{{ article.title }}</a></h2>
-        <p>{{ article.snippet }}</p>
+        <p class="content-markdown">{{ article.snippet }}</p>
         <p>{{ article.date }}</p>
         <p class="author">Added by: {{ article.author.username }}</p>
       </div>

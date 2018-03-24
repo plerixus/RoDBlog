@@ -1,12 +1,12 @@
 {% extends 'base_layout.html' %}
 {% block content %}
 <div class="article-detail">
-  <div class="article">    
-    <h2>{{ article.title }}</h2>
+  <div class="article">
+    <h2 class="title-center">{{ article.title }}</h2>
 	{% if article.thumb %}
     <img src="{{ article.thumb.url }}"/>
 	{% endif %}
-    <p>{{ article.text | linebreaks }}</p>
+    <p class = "content-markdown">{{ article.text  }}</p>
     <p>{{ article.date }}</p>
 
   </div>

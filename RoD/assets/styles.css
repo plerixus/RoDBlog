@@ -91,13 +91,17 @@ margin: 0;
 }
 
 .article-detail .article h2{
-  text-align: center;
+
   margin: 20px auto;
   font-size: 2em;
 }
 
-.article-detail .article p{
+.title-center{
   text-align: center;
+}
+
+.article-detail .article p{
+  /*text-align: center;*/
 }
 
 .site-form{
